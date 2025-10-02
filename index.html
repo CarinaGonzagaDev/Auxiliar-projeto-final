@@ -4,46 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cultura Imersiva - Animes e Mangás</title>
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components/style-components.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Cultura Imersiva</a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Animes</a></li>
+                    <li><a href="#">HQs</a></li>
+                    <li><a href="#">Top Avaliados</a></li>
+                    <li><a href="#">Meus Favoritos</a></li>
+                </ul>
+            </nav>
+    
+            <div class="user-actions">
+                <a href="#" class="login-btn">Entre</a>
+            </div>
+        </div>
+    </header>
+
     <main>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Animes, mangás e muito mais.</h1>
-            <p>Infinitas possibilidades para você explorar.</p>
-        </div>
-    </section>
-
-    <section class="featured-works">
-        <h2>Animes em Destaque</h2>
-        <div class="carousel-container">
-            <button id="anime-prev-btn" class="carousel-btn prev" aria-label="Anterior">‹</button>
-            <div class="carousel-viewport">
-                <div class="carousel-track" id="anime-carousel-track">
-                    </div>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Animes, mangás e muito mais.</h1>
+                <p>Infinitas possibilidades para você explorar.</p>
             </div>
-            <button id="anime-next-btn" class="carousel-btn next" aria-label="Próximo">›</button>
-        </div>
-    </section>
+        </section>
 
-    <section class="featured-works">
-        <h2>Mangás em Destaque</h2>
-        <div class="carousel-container">
-            <button id="manga-prev-btn" class="carousel-btn prev" aria-label="Anterior">‹</button>
-            <div class="carousel-viewport">
-                <div class="carousel-track" id="manga-carousel-track">
-                    </div>
+        <section class="featured-works">
+            <h2>Animes em Destaque</h2>
+            <div class="carousel-container">
+                <button id="anime-prev-btn" class="carousel-btn prev" aria-label="Anterior">‹</button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="anime-carousel-track"></div>
+                </div>
+                <button id="anime-next-btn" class="carousel-btn next" aria-label="Próximo">›</button>
             </div>
-            <button id="manga-next-btn" class="carousel-btn next" aria-label="Próximo">›</button>
-        </div>
-    </section>
+        </section>
 
-</main>
+        <section class="featured-works">
+            <h2>Mangás em Destaque</h2>
+            <div class="carousel-container">
+                <button id="manga-prev-btn" class="carousel-btn prev" aria-label="Anterior">‹</button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="manga-carousel-track"></div>
+                </div>
+                <button id="manga-next-btn" class="carousel-btn next" aria-label="Próximo">›</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Cultura Imersiva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script src="dist/script.js"></script>
 </body>
