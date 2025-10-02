@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animes - Cultura Imersiva</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components/style-components.css">
+    <link rel="stylesheet" href="css/filters.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Cultura Imersiva</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="animes.html">Animes</a></li>
+                    <li><a href="hqs.html">HQs</a></li>
+                    <li><a href="#">Top Avaliados</a></li>
+                    <li><a href="#">Meus Favoritos</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions"><a href="#" class="login-btn">Entre</a></div>
+        </div>
+    </header>
+    <main>
+        <section class="filter-section">
+            <h2>Explore Animes</h2>
+            <form class="filters-form" id="filters-form">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label for="search-name">Nome da Obra</label>
+                        <input type="text" id="search-name" placeholder="Ex: Jujutsu Kaisen...">
+                    </div>
+                    <div class="filter-group" id="audio-filter-group">
+                        <label for="filter-audio">Áudio</label>
+                        <select id="filter-audio">
+                            <option value="todos">Todos</option>
+                            <option value="legendado">Legendado</option>
+                            <option value="dublado">Dublado</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" id="country-filter-group" style="display: none;">
+                        <label for="filter-country">País de Origem</label>
+                        <select id="filter-country"></select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-year">Ano de Lançamento</label>
+                        <select id="filter-year"></select>
+                    </div>
+                    <div class="filter-group custom-select-group">
+                        <label>Gêneros</label>
+                        <button type="button" class="genre-filter-button" id="genre-filter-btn">
+                            <span>Selecione os gêneros</span>
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div class="genre-dropdown-panel" id="genre-container"></div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-rating">Avaliação</label>
+                        <select id="filter-rating"></select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-sort">Ordenar por</label>
+                        <select id="filter-sort">
+                            <option value="relevance">Relevância</option>
+                            <option value="az">A-Z</option>
+                            <option value="za">Z-A</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button type="reset" class="btn-clear">Limpar Filtro</button>
+                    <button type="submit" class="btn-filter">Filtrar</button>
+                </div>
+            </form>
+        </section>
+        <section class="results-section">
+            <div class="results-grid" id="results-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Cultura Imersiva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="dist/filters.js"></script>
+</body>
+</html>
