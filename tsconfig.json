@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* Direciona para qual versão do JavaScript o código será compilado */
+    "target": "es6",
+
+    /* Especifica o sistema de módulos */
+    "module": "commonjs",
+
+    /* Define a pasta de saída para os arquivos compilados */
+    "outDir": "./dist",
+
+    /* Garante uma verificação de tipos mais rigorosa */
+    "strict": true,
+
+    /* Permite a interoperabilidade com módulos CommonJS */
+    "esModuleInterop": true,
+
+    /* Impede a geração dos arquivos .d.ts que estavam causando os erros */
+    "declaration": false
+  },
+  /* Diz ao compilador para incluir todos os arquivos da pasta 'ts' */
+  "include": [
+    "ts/**/*"
+  ]
+}
