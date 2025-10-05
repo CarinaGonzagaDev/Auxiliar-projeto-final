@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Cultura Imersiva</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components/style-components.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Cultura Imersiva</a>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-form">
+            <h1>Crie sua Conta</h1>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        Eu li e aceito os <a href="termos-de-uso.html" target="_blank">Termos de Uso</a> e a <a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="auth-button" id="register-button">Cadastrar</button>
+            </form>
+            <p class="auth-link">
+                Já tem uma conta? <a href="login.html">Faça login</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Cultura Imersiva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="dist/auth.js"></script>
+</body>
+</html>

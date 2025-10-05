@@ -1,12 +1,10 @@
 {
-  "name": "projeto-final-experimental",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "compilerOptions": {
+    "target": "es6",
+    "outDir": "./dist",
+    "strict": true
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "include": [
+    "ts/**/*"
+  ]
 }

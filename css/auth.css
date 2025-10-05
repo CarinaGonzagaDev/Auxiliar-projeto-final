@@ -1,0 +1,121 @@
+/* css/auth.css */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.auth-form {
+    background-color: var(--surface-color);
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.auth-form h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: #121212;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #d1b1fc;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- CÓDIGO CORRIGIDO PARA OS TERMOS DE USO --- */
+
+.form-group.terms {
+    display: flex;          /* 1. Torna o container flexível */
+    flex-direction: row;    /* 2. Garante que os itens fiquem lado a lado */
+    align-items: flex-start;/* 3. Alinha o checkbox ao topo do texto */
+    gap: 0.5rem;            /* 4. Cria um pequeno espaço entre a caixa e o texto */
+    margin-bottom: 2rem;    /* Espaçamento inferior */
+}
+
+.form-group.terms input[type="checkbox"] {
+    width: auto;            /* Garante que o checkbox não ocupe a largura toda */
+    margin-top: 5px;        /* Ajuste para alinhar verticalmente com a primeira linha de texto */
+}
+
+.form-group.terms label {
+    display: inline;        /* Permite que o texto fique ao lado do checkbox */
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.form-group.terms a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.form-group.terms a:hover {
+    text-decoration: underline;
+}
+
+.auth-button:disabled {
+    background-color: #333;
+    color: #666;
+    cursor: not-allowed;
+}
