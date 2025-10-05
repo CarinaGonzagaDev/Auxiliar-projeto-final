@@ -1,18 +1,45 @@
 // ts/script.ts
 
-// --- IMPORTAÇÕES DOS BANCOS DE DADOS ---
-import { featuredAnimeData, Anime } from './anime-data';
-import { featuredMangaData, Manga } from './manga-data';
+// --- ESTRUTURAS E DADOS ---
 
+interface Work {
+    id: number;
+    title: string;
+    coverUrl: string;
+    rating: number;
+    type: 'Anime' | 'Mangá';
+    season?: number;
+    episode?: number;
+    chapters?: number;
+}
 
-type Work = Anime | Manga;
+const featuredAnimeData: Work[] = [
+    { id: 1, title: 'Jujutsu Kaisen', coverUrl: 'img/Jujutsu Kaisen.jpg', rating: 8.7, season: 2, episode: 23, type: 'Anime' },
+    { id: 2, title: 'Kimetsu no Yaiba', coverUrl: 'img/Kimetsu no Yaiba.jpg', rating: 9.8, season: 4, episode: 8, type: 'Anime' },
+    { id: 3, title: 'Chainsaw Man', coverUrl: 'img/Chainsaw Man.jpg', rating: 9.8, season: 1, episode: 12, type: 'Anime' },
+    { id: 4, title: 'Dandadan', coverUrl: 'img/Dandadan.jpg', rating: 9.8, season: 1, episode: 12, type: 'Anime' },
+    // A imagem 'attack-on-titan.jpg' precisa existir na sua pasta 'img/'
+    { id: 5, title: 'Attack on Titan', coverUrl: 'img/Attack On Titan.jpg', rating: 9.3, season: 4, episode: 28, type: 'Anime' },
+    // A imagem 'vinland-saga.jpg' precisa existir na sua pasta 'img/'
+    { id: 6, title: 'Vinland Saga', coverUrl: 'img/vinland-saga.jpg', rating: 9.2, season: 2, episode: 24, type: 'Anime' },
+];
+
+const featuredMangaData: Work[] = [
+    { id: 7, title: 'One Piece', coverUrl: 'img/One Piece Mangá.jpg', rating: 9.9, chapters: 1161, type: 'Mangá' },
+    { id: 8, title: 'Look Back', coverUrl: 'img/Look Back Mangá.jpg', rating: 9.5, chapters: 1, type: 'Mangá' },
+    { id: 9, title: 'A Bride\'s Story', coverUrl: 'img/Otoyomegatari Mangá.jpg', rating: 9.7, chapters: 112, type: 'Mangá' },
+    { id: 10, title: 'Battle Angel Alita', coverUrl: 'img/Battle Angel Alita Mangá.jpg', rating: 9.3, chapters: 51, type: 'Mangá' },
+    { id: 11, title: 'Dragon Ball Super', coverUrl: 'img/Dragon Ball Mangá.jpg', rating: 8.5, chapters: 104, type: 'Mangá' },
+];
+
 
 // --- LÓGICA DO CARROSSEL ---
+
 class Carousel {
     private trackElement!: HTMLDivElement;
     private prevButton!: HTMLButtonElement;
     private nextButton!: HTMLButtonElement;
-    private data! : Work[];
+    private data!: Work[];
     private currentIndex = 0;
 
     constructor(trackId: string, prevBtnId: string, nextBtnId: string, data: Work[]) {
@@ -41,8 +68,9 @@ class Carousel {
                 ? `<span>S${work.season}</span> | <span>E${work.episode}</span>`
                 : `<span>${work.chapters} Capítulos</span>`;
 
+            // Voltamos a um link simples para evitar erros com a página 'obra.html' por enquanto.
             trackHtml += `
-                <a href="/obra/${work.id}" class="carousel-item">
+                <a href="#" class="carousel-item">
                     <img src="${work.coverUrl}" alt="Capa de ${work.title}">
                     <div class="item-info">
                         <h3>${work.title}</h3>
@@ -57,7 +85,7 @@ class Carousel {
         }
         this.trackElement.innerHTML = trackHtml;
     }
-
+    
     private setupEventListeners(): void {
         this.nextButton.addEventListener('click', () => this.goToNext());
         this.prevButton.addEventListener('click', () => this.goToPrev());
@@ -123,6 +151,7 @@ class Carousel {
 }
 
 // --- INICIALIZAÇÃO ---
+
 function inicializarCarrosseis() {
     new Carousel('anime-carousel-track', 'anime-prev-btn', 'anime-next-btn', featuredAnimeData);
     new Carousel('manga-carousel-track', 'manga-prev-btn', 'manga-next-btn', featuredMangaData);

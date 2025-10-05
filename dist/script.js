@@ -1,12 +1,13 @@
 "use strict";
-// --- ESTRUTURAS E DADOS ---
+// ts/script.ts
 const featuredAnimeData = [
     { id: 1, title: 'Jujutsu Kaisen', coverUrl: 'img/Jujutsu Kaisen.jpg', rating: 8.7, season: 2, episode: 23, type: 'Anime' },
     { id: 2, title: 'Kimetsu no Yaiba', coverUrl: 'img/Kimetsu no Yaiba.jpg', rating: 9.8, season: 4, episode: 8, type: 'Anime' },
     { id: 3, title: 'Chainsaw Man', coverUrl: 'img/Chainsaw Man.jpg', rating: 9.8, season: 1, episode: 12, type: 'Anime' },
     { id: 4, title: 'Dandadan', coverUrl: 'img/Dandadan.jpg', rating: 9.8, season: 1, episode: 12, type: 'Anime' },
-    // CAMINHOS ATUALIZADOS AQUI
-    { id: 5, title: 'Attack on Titan', coverUrl: 'img/attack-on-titan.jpg', rating: 9.3, season: 4, episode: 28, type: 'Anime' },
+    // A imagem 'attack-on-titan.jpg' precisa existir na sua pasta 'img/'
+    { id: 5, title: 'Attack on Titan', coverUrl: 'img/Attack On Titan.jpg', rating: 9.3, season: 4, episode: 28, type: 'Anime' },
+    // A imagem 'vinland-saga.jpg' precisa existir na sua pasta 'img/'
     { id: 6, title: 'Vinland Saga', coverUrl: 'img/vinland-saga.jpg', rating: 9.2, season: 2, episode: 24, type: 'Anime' },
 ];
 const featuredMangaData = [
@@ -40,8 +41,9 @@ class Carousel {
             const metaInfo = work.type === 'Anime'
                 ? `<span>S${work.season}</span> | <span>E${work.episode}</span>`
                 : `<span>${work.chapters} Capítulos</span>`;
+            // Voltamos a um link simples para evitar erros com a página 'obra.html' por enquanto.
             trackHtml += `
-                <a href="/obra/${work.id}" class="carousel-item">
+                <a href="#" class="carousel-item">
                     <img src="${work.coverUrl}" alt="Capa de ${work.title}">
                     <div class="item-info">
                         <h3>${work.title}</h3>
